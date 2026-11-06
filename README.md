@@ -3,4 +3,5 @@
 Personal site and public download pages.
 
 - Home: <https://anassbounhar.github.io/>
-- LV Timesheet Studio: <https://anassbounhar.github.io/lv-timesheet-studio/>
+- Projects grid: <https://anassbounhar.github.io/projects/>
+- LV Timesheet Studio: <https://anassbounhar.github.io/projects/lvtimesheetstudio/>
