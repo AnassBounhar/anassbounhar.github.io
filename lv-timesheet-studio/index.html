@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LV Timesheet Studio — Downloads</title>
+  <style>
+    :root {
+      --ink: #004161;
+      --blue: #0071a2;
+      --bright: #00a8e3;
+      --orange: #f36c21;
+      --muted: #5a5a5a;
+      --line: #d5e3ea;
+      --page: #f3f8fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, "Liberation Sans", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: var(--page);
+      line-height: 1.5;
+    }
+    main {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+    }
+    img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+    }
+    .eyebrow {
+      margin: 0;
+      color: var(--orange);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0.15rem 0 0;
+      font-size: 2rem;
+      line-height: 1.15;
+    }
+    .lead {
+      margin: 0 0 1.75rem;
+      max-width: 40rem;
+    }
+    .lead span { color: var(--muted); }
+    section {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.1rem 1.2rem 1.2rem;
+      margin-top: 0.9rem;
+    }
+    h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.05rem;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+    a.download {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      text-decoration: none;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 10px;
+      padding: 0.72rem 0.9rem;
+      font-weight: 700;
+    }
+    a.download:hover { background: #005d86; }
+    a.download small {
+      font-weight: 400;
+      color: #d7eef7;
+    }
+    .pending {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .note {
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .note a { color: var(--blue); }
+    .back {
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">← All projects</a>
+    <header>
+      <img src="icon.png" alt="">
+      <div>
+        <p class="eyebrow">Version 0.0.10.10</p>
+        <h1>LV Timesheet Studio</h1>
+      </div>
+    </header>
+    <p class="lead">
+      Turn Microsoft Dynamics time-entry Excel exports into the monthly LV timesheet workbook.
+      <span>Region mapping, report sheets, and a local analytics archive — with configurable rules.</span>
+    </p>
+
+    <section>
+      <h2>Linux</h2>
+      <ul>
+        <li><a class="download" href="https://github.com/AnassBounhar/anassbounhar.github.io/releases/download/lv-timesheet-studio-v0.0.10.10/lvmu-timesheet-studio_0.0.10.10_amd64.deb">Debian package <small>.deb</small></a></li>
+        <li><a class="download" href="https://github.com/AnassBounhar/anassbounhar.github.io/releases/download/lv-timesheet-studio-v0.0.10.10/lvmu-timesheet-studio-0.0.10.10-linux-x86_64.tar.gz">Portable archive <small>.tar.gz</small></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Windows</h2>
+      <p class="pending">Windows portable and Setup builds are not published yet for this version.</p>
+    </section>
+
+    <section>
+      <h2>macOS</h2>
+      <p class="pending">macOS builds are not published yet for this version.</p>
+    </section>
+
+    <p class="note">
+      These builds are unsigned, so some Linux desktop environments may ask you to confirm the first launch.
+      The same files are listed on the
+      <a href="https://github.com/AnassBounhar/anassbounhar.github.io/releases/tag/lv-timesheet-studio-v0.0.10.10">GitHub release</a>.
+    </p>
+  </main>
+</body>
+</html>

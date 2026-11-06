@@ -4,16 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anass Bounhar</title>
-  <meta name="description" content="Infrastructure, automation, and desktop tools." />
+  <meta name="description" content="Desktop apps and tools — hosts sync, server ops, local signing, and timesheets." />
   <style>
     :root {
       --deep-blue: #004161;
       --lab-blue: #0071a2;
       --bright-blue: #00a8e3;
+      --orange: #e85d04;
       --dark-grey: #5a5a5a;
       --medium-grey: #8a8a8a;
+      --line: rgba(0, 65, 97, 0.12);
       --bg: #f4f7f9;
       --card: #ffffff;
+      --shadow: 0 18px 50px rgba(0, 65, 97, 0.08);
+      --shadow-hover: 0 22px 56px rgba(0, 113, 162, 0.16);
     }
     * { box-sizing: border-box; }
     body {
@@ -24,14 +28,16 @@
                   radial-gradient(900px 500px at 80% 100%, rgba(0, 113, 162, 0.06), transparent),
                   var(--bg);
       color: var(--deep-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      line-height: 1.55;
+      padding: 2rem 1.25rem 3rem;
     }
-    main {
-      max-width: 32rem;
+    .shell {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+    header {
       text-align: center;
+      margin-bottom: 2.25rem;
     }
     .mark {
       width: 3rem;
@@ -47,42 +53,183 @@
       letter-spacing: -0.02em;
       margin: 0 0 0.75rem;
     }
-    p {
-      margin: 0 0 2rem;
+    .lead {
+      margin: 0 auto;
+      max-width: 32rem;
       color: var(--dark-grey);
-      line-height: 1.6;
       font-size: 1.05rem;
     }
-    a.btn {
-      display: inline-block;
-      padding: 0.85rem 1.75rem;
+    .section-label {
+      margin: 0 0 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--medium-grey);
+    }
+    .grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+    a.project {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.1rem;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    a.project:hover {
+      transform: translateY(-2px);
+      border-color: rgba(0, 168, 227, 0.35);
+      box-shadow: var(--shadow-hover);
+    }
+    a.project img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 6px 16px rgba(0, 65, 97, 0.12);
+    }
+    .project-copy h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--lab-blue);
+      letter-spacing: -0.02em;
+    }
+    .project-copy p {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+      color: var(--dark-grey);
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.55rem;
+    }
+    .tag {
+      padding: 0.12rem 0.45rem;
       border-radius: 999px;
+      background: rgba(0, 168, 227, 0.1);
+      color: var(--lab-blue);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .arrow {
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(0, 113, 162, 0.08);
+      color: var(--lab-blue);
+      font-size: 1rem;
+    }
+    a.project:hover .arrow {
       background: var(--lab-blue);
       color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 14px rgba(0, 113, 162, 0.25);
-      transition: background 0.15s ease, transform 0.15s ease;
-    }
-    a.btn:hover {
-      background: var(--deep-blue);
-      transform: translateY(-1px);
     }
     footer {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
+      text-align: center;
       font-size: 0.8rem;
       color: var(--medium-grey);
+    }
+    footer a {
+      color: var(--lab-blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 540px) {
+      a.project { grid-template-columns: auto 1fr; }
+      .arrow { display: none; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <div class="mark" aria-hidden="true"></div>
-    <h1>Anass Bounhar</h1>
-    <p>Infrastructure, automation, timesheets, and cross-platform tools for operations teams.</p>
-    <a class="btn" href="https://anassbounhar.github.io/public/">View projects</a>
-    <footer>Calm tools for busy systems.</footer>
-  </main>
+  <div class="shell">
+    <header>
+      <div class="mark" aria-hidden="true"></div>
+      <h1>Anass Bounhar</h1>
+      <p class="lead">Infrastructure, automation, timesheets, and cross-platform tools for operations teams.</p>
+    </header>
+
+    <p class="section-label">Projects</p>
+    <div class="grid">
+      <a class="project" href="lv-timesheet-studio/">
+        <img src="lv-timesheet-studio/icon.png" alt="">
+        <div class="project-copy">
+          <h2>LV Timesheet Studio</h2>
+          <p>Turn Dynamics time-entry Excel exports into the monthly LV timesheet workbook with region rules and analytics.</p>
+          <div class="tags">
+            <span class="tag">Linux</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Desktop</span>
+            <span class="tag">New</span>
+          </div>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="project" href="https://anassbounhar.github.io/public/hosts-sync/">
+        <img src="https://anassbounhar.github.io/public/hosts-sync/icon.png" alt="">
+        <div class="project-copy">
+          <h2>Hosts Sync</h2>
+          <p>Keep your system hosts file synchronized from a Git repository on Windows, macOS, and Ubuntu.</p>
+          <div class="tags">
+            <span class="tag">Windows</span>
+            <span class="tag">macOS</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="project" href="https://anassbounhar.github.io/public/jboss-manager/">
+        <img src="https://anassbounhar.github.io/public/jboss-manager/icon.png" alt="">
+        <div class="project-copy">
+          <h2>JBoss Manager</h2>
+          <p>Check, start, stop, restart, kill, and clean up JBoss services on Dev and Prod servers over WinRM.</p>
+          <div class="tags">
+            <span class="tag">Windows</span>
+            <span class="tag">WinRM</span>
+          </div>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="project" href="https://anassbounhar.github.io/public/pdf-pfx-sign/">
+        <img src="https://anassbounhar.github.io/public/pdf-pfx-sign/icon.png" alt="">
+        <div class="project-copy">
+          <h2>PDF PFX Sign</h2>
+          <p>Sign a PDF with a PFX certificate on this computer. Keys and passwords never leave the device.</p>
+          <div class="tags">
+            <span class="tag">Windows</span>
+            <span class="tag">Linux</span>
+            <span class="tag">macOS</span>
+            <span class="tag">Edge</span>
+          </div>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <footer>
+      Calm tools for busy systems.
+      ·
+      <a href="https://anassbounhar.github.io/public/">Classic projects index</a>
+    </footer>
+  </div>
 </body>
 </html>
